@@ -6,7 +6,7 @@ def defaultEncoding = 'UTF-8'
 group 'com.github.altair77'
 version '1.0.1'
 
-sourceCompatibility = 11
+sourceCompatibility = 1.8
 
 tasks.withType(JavaCompile) {
     options.encoding = defaultEncoding
@@ -26,8 +26,8 @@ publishing {
             name = "GitHubPackages"
             url = uri("https://maven.pkg.github.com/altair77/moji4j")
             credentials {
-                username = project.findProperty("gpr.user") ?: System.getenv("GITHUB_ACTOR")
-                password = project.findProperty("gpr.key") ?: System.getenv("GITHUB_TOKEN")
+                username = findProperty("gpr.user") ?: System.getenv("GITHUB_ACTOR")
+                password = findProperty("gpr.key") ?: System.getenv("GITHUB_TOKEN")
             }
         }
     }
