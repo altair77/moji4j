@@ -4,7 +4,7 @@ apply plugin: 'maven-publish'
 def defaultEncoding = 'UTF-8'
 
 group 'com.github.altair77'
-version '1.0.0'
+version '1.0.1'
 
 sourceCompatibility = 11
 
@@ -14,6 +14,10 @@ tasks.withType(JavaCompile) {
 
 repositories {
     mavenCentral()
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.13'
 }
 
 publishing {
